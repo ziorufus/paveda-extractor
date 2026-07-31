@@ -18,10 +18,12 @@ try:
         cleanText,
         convertCS,
         findForm,
+        getMeaningOrdinal,
         getVerbMeaning,
         map_with_suffix,
         mergeData,
         readFile,
+        resolveExistingForm,
         sanitizeFrame,
         saveFile,
     )
@@ -35,10 +37,12 @@ except ImportError:  # pragma: no cover - standalone script compatibility
         cleanText,
         convertCS,
         findForm,
+        getMeaningOrdinal,
         getVerbMeaning,
         map_with_suffix,
         mergeData,
         readFile,
+        resolveExistingForm,
         sanitizeFrame,
         saveFile,
     )
@@ -499,9 +503,8 @@ def run_conversion(config):
                     clean_form = cleanApostrophe(forms_db[form_index]["Form"])
                     new_index = f"{forms_db[form_index]['Parameter_ID']}-{clean_form}"
                     if new_index in already_included_forms:
-                        print(f"WARN: {new_index} already exists [lang = {lang_code}]")
-                        continue
-                    already_included_forms[new_index] = form_index
+                        print(f"WARN: {new_index} already exists as a homonym with identical spelling [lang = {lang_code}], disambiguating by meaning ordinal")
+                    already_included_forms.setdefault(new_index, []).append(form_index)
 
                     raw_meaning = parameters_db[forms_db[form_index]["Parameter_ID"]]["Name"]
                     form_map[raw_meaning] = form_index
@@ -539,21 +542,24 @@ def run_conversion(config):
                 this_index = f"{verb_meaning}-{verb}"
                 if this_index in already_included_forms:
                     already_present = True
-                    form_map[raw_meaning] = forms_db[already_included_forms[this_index]]["ID"]
-                    verb_map[raw_meaning] = forms_db[already_included_forms[this_index]]["Parameter_ID"]
+                    matched_form_id = resolveExistingForm(
+                        already_included_forms[this_index], getMeaningOrdinal(raw_meaning)
+                    )
+                    form_map[raw_meaning] = forms_db[matched_form_id]["ID"]
+                    verb_map[raw_meaning] = forms_db[matched_form_id]["Parameter_ID"]
 
                     if sc_text != "Unknown":
                         if debug:
                             print(f"Updated {verb_map[raw_meaning]}, simplex_or_complex = {sc_text}")
-                        forms_db[already_included_forms[this_index]]["simplex_or_complex"] = sc_text
+                        forms_db[matched_form_id]["simplex_or_complex"] = sc_text
                     if frame:
                         if debug:
                             print(f"Updated {verb_map[raw_meaning]}, Basic_Coding_Frame_ID = {frame_map[frame]}")
-                        forms_db[already_included_forms[this_index]]["Basic_Coding_Frame_ID"] = frame_map[frame]
+                        forms_db[matched_form_id]["Basic_Coding_Frame_ID"] = frame_map[frame]
                     if df_basic["notes-lemma"][index]:
                         if debug:
                             print(f"Updated {verb_map[raw_meaning]}, Comment = {df_basic['notes-lemma'][index]}")
-                        forms_db[already_included_forms[this_index]]["Comment"] = df_basic["notes-lemma"][index]
+                        forms_db[matched_form_id]["Comment"] = df_basic["notes-lemma"][index]
                     continue
 
             if not frame or frame == "na":
@@ -595,7 +601,9 @@ def run_conversion(config):
                 this_verb = cleanApostrophe(df_alternations["Verb"][index])
                 new_index = f"{raw_meaning_ok}-{this_verb}"
                 if new_index in already_included_forms:
-                    this_form = already_included_forms[new_index]
+                    this_form = resolveExistingForm(
+                        already_included_forms[new_index], getMeaningOrdinal(raw_meaning)
+                    )
                     form_map[raw_meaning] = this_form
                     verb_map[raw_meaning] = raw_meaning_ok
                 else:

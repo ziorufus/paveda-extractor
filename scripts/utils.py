@@ -39,6 +39,24 @@ def getVerbMeaning(s):
     verbMeaning = verbMeaning.lower().replace(' ', '-')
     return verbMeaning
 
+def getMeaningOrdinal(rawMeaning):
+    # Homonyms are distinguished in the "Meaning" column with a "(N)" suffix,
+    # e.g. "PLAY (1)" vs "PLAY (2)"; this mirrors the "-N" suffix on the
+    # corresponding Form ID (e.g. "russ1263-play-2") in the CLDF DB.
+    match = re.search(r"\((\d+)\)", rawMeaning)
+    return match.group(1) if match else "1"
+
+def resolveExistingForm(candidates, ordinal):
+    # `candidates` are existing forms sharing the same (meaning, verb text) key.
+    # Usually there is only one; when several homonyms happen to have the exact
+    # same spelling, use the meaning's "(N)" ordinal to pick the right one.
+    if len(candidates) == 1:
+        return candidates[0]
+    for candidate in candidates:
+        if candidate.rsplit("-", 1)[-1] == ordinal:
+            return candidate
+    return candidates[0]
+
 def findForm(verbMeaning, parametersDB, formsDB, langCode, loopLimit, formMap):
     if verbMeaning not in parametersDB:
         return None
