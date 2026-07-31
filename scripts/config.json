@@ -1,0 +1,418 @@
+{
+  "loop_limit": 10,
+  "show_stats": false,
+  "convert_cs": true,
+  "base_folder": "/Users/alessio/Library/CloudStorage/GoogleDrive-alessio@apnetwork.it/My Drive/Lavoro/valpal",
+  "input_folder": "$BASE/cldf",
+  "output_folder": "$BASE/cldf-out-20260413",
+  "excel_folder": "$BASE/data",
+  "perform_alt_classes": true,
+  "alt_classes_folder": "$BASE/data/alt-classes",
+  "new_mm_file": "_new-data.xlsx",
+  "frame_map": {
+    "SHAVE": "SHAVE (a body part/person)"
+  },
+  "radi_map": {
+    "R": "Rearranging",
+    "A": "Augmenting",
+    "D": "Decreasing",
+    "I": "Identifying"
+  },
+  "rename_columns": {
+    "a": {
+      "Alternation class": "R/A/D/I",
+      "Coding type": "Type",
+      "Coding Type": "Type",
+      "M/R/N": "M/R/N/D"
+    },
+    "e": {
+      "Type": "B/A"
+    },
+    "mr": {
+      "Type": "B/A"
+    }
+  },
+  "debug": false,
+  "error_reporting": {
+    "meanings": true,
+    "microroles": true,
+    "frames": true
+  },
+  "languages_to_run": [
+  ],
+  "sets": {
+    "production": [
+      "farsi.xlsx",
+      "gothic.xlsx",
+      "middle-english.xlsx",
+      "modern-english.xlsx",
+      "modern-irish.xlsx",
+      "old-armenian.xlsx",
+      "old-english.xlsx",
+      "old-high-german.xlsx",
+      "old-irish.xlsx",
+      "old-latin.xlsx",
+      "old-norse.xlsx",
+      "old-swedish.xlsx",
+      "turkish.xlsx",
+      "ancient-greek.xlsx",
+      "greek.xlsx"
+    ],
+    "matteo": [
+      "old-swedish.xlsx",
+      "old-norse.xlsx"
+    ]
+  },
+  "languages": [
+    {
+      "ID": "anci1242",
+      "Name": "Ionic-Attic Ancient Greek",
+      "Glottocode": "anci1242",
+      "Glottolog_Name": "Ionic-Attic Ancient Greek",
+      "Family": "Indo-European",
+      "ISO639P3code": "grc",
+      "Macroarea": "Eurasia",
+      "Latitude": "38.0",
+      "Longitude": "23.73",
+      "contributors": "Guglielmo Inglese and Chiara Zanchi",
+      "excel_filename": "ancient-greek.xlsx"
+    },
+    {
+      "ID": "west2369",
+      "Name": "Western Farsi",
+      "Glottocode": "west2369",
+      "Glottolog_Name": "Western Farsi",
+      "Family": "Indo-European",
+      "ISO639P3code": "pes",
+      "Macroarea": "Eurasia",
+      "Latitude": "32.90",
+      "Longitude": "53.30",
+      "contributors": "Raheleh Izadi Far",
+      "excel_filename": "farsi.xlsx"
+    },
+    {
+      "ID": "finn1318",
+      "Name": "Finnish",
+      "Glottocode": "finn1318",
+      "Glottolog_Name": "Finnish",
+      "Family": "Indo-European",
+      "ISO639P3code": "fin",
+      "Macroarea": "Eurasia",
+      "Latitude": "64.76",
+      "Longitude": "25.56",
+      "contributors": "Seppo Kittilä and Rodolfo Basile",
+      "excel_filename": "finnish.xlsx"
+    },
+    {
+      "ID": "goth1244",
+      "Name": "Gothic",
+      "Glottocode": "goth1244",
+      "Glottolog_Name": "Gothic",
+      "Family": "Indo-European",
+      "ISO639P3code": "got",
+      "Macroarea": "Eurasia",
+      "Latitude": "46.96",
+      "Longitude": "29.84",
+      "contributors": "Matteo Tarsi and Chiara Zanchi",
+      "excel_filename": "gothic.xlsx"
+    },
+    {
+      "ID": "mode1248",
+      "Name": "Modern Greek",
+      "Glottocode": "mode1248",
+      "Glottolog_Name": "Modern Greek",
+      "Family": "Indo-European",
+      "ISO639P3code": "ell",
+      "Macroarea": "Eurasia",
+      "Latitude": "38.36",
+      "Longitude": "23.13",
+      "contributors": "Thanasis Georgakopoulos",
+      "excel_filename": "greek.xlsx"
+    },
+    {
+      "ID": "hind1269",
+      "Name": "Hindi",
+      "Glottocode": "hind1269",
+      "Glottolog_Name": "Hindi",
+      "Family": "Indo-European",
+      "ISO639P3code": "hin",
+      "Macroarea": "Eurasia",
+      "Latitude": "25",
+      "Longitude": "77",
+      "contributors": "Lucrezia Carnesale",
+      "excel_filename": "hindi.xlsx"
+    },
+    {
+      "ID": "hitt1242",
+      "Name": "Hittite",
+      "Glottocode": "hitt1242",
+      "Glottolog_Name": "Hittite",
+      "Family": "Indo-European",
+      "ISO639P3code": "hit",
+      "Macroarea": "Eurasia",
+      "Latitude": "40",
+      "Longitude": "35",
+      "contributors": "Guglielmo Inglese",
+      "excel_filename": "hittite.xlsx"
+    },
+    {
+      "ID": "ancihomr",
+      "Name": "Homeric Greek",
+      "Glottocode": "anci1242",
+      "Glottolog_Name": "Ionic-Attic Ancient Greek",
+      "Family": "Indo-European",
+      "ISO639P3code": "grc",
+      "Macroarea": "Eurasia",
+      "Latitude": "38.0",
+      "Longitude": "23.73",
+      "contributors": "Guglielmo Inglese and Silvia Zampetta",
+      "excel_filename": "homeric-greek.xlsx"
+    },
+    {
+      "ID": "midd1317",
+      "Name": "Middle English",
+      "Glottocode": "midd1317",
+      "Glottolog_Name": "Middle English",
+      "Family": "Indo-European",
+      "ISO639P3code": "enm",
+      "Macroarea": "Eurasia",
+      "Latitude": "51.39",
+      "Longitude": "-1.07",
+      "contributors": "Martina Giarda",
+      "excel_filename": "middle-english.xlsx"
+    },
+    {
+      "ID": "midd1343",
+      "Name": "Middle High German",
+      "Glottocode": "midd1343",
+      "Glottolog_Name": "Middle High German",
+      "Family": "Indo-European",
+      "ISO639P3code": "gmh",
+      "Macroarea": "Eurasia",
+      "Latitude": "48.25",
+      "Longitude": "10.60",
+      "contributors": "Matteo Tarsi",
+      "excel_filename": "middle-high-german.xlsx"
+    },
+    {
+      "ID": "mode1257",
+      "Name": "Modern Dutch",
+      "Glottocode": "mode1257",
+      "Glottolog_Name": "Modern Dutch",
+      "Family": "Indo-European",
+      "ISO639P3code": "nld",
+      "Macroarea": "Eurasia",
+      "Latitude": "52",
+      "Longitude": "5",
+      "contributors": "Matteo Tarsi",
+      "excel_filename": "modern-dutch.xlsx"
+    },
+    {
+      "ID": "stan1293",
+      "Name": "English",
+      "contributors": "Martina Giuliani",
+      "excel_filename": "modern-english.xlsx"
+    },
+    {
+      "ID": "iris1253",
+      "Name": "Irish",
+      "Glottocode": "iris1253",
+      "Glottolog_Name": "Irish",
+      "Family": "Indo-European",
+      "ISO639P3code": "gle",
+      "Macroarea": "Eurasia",
+      "Latitude": "53.22",
+      "Longitude": "-7.62",
+      "contributors": "Elisa Roma",
+      "excel_filename": "modern-irish.xlsx"
+    },
+    {
+      "ID": "clas1256",
+      "Name": "Classical Armenian",
+      "Glottocode": "clas1256",
+      "Glottolog_Name": "Classical Armenian",
+      "Family": "Indo-European",
+      "ISO639P3code": "xcl",
+      "Macroarea": "Eurasia",
+      "Latitude": "40.0",
+      "Longitude": "45.0",
+      "contributors": "Petr Kocharov",
+      "excel_filename": "old-armenian.xlsx"
+    },
+    {
+      "ID": "chur1257",
+      "Name": "Church Slavic",
+      "Glottocode": "chur1257",
+      "Glottolog_Name": "Church Slavic",
+      "Family": "Indo-European",
+      "ISO639P3code": "chu",
+      "Macroarea": "Eurasia",
+      "Latitude": "43.72",
+      "Longitude": "22.84",
+      "contributors": "Carlo Galli and Viacheslav Kozak",
+      "excel_filename": "old-church-slavonic.xlsx"
+    },
+    {
+      "ID": "croa0000",
+      "Name": "Old Croatian",
+      "Glottocode": "croa1245",
+      "Glottolog_Name": "Croatian",
+      "Family": "Indo-European",
+      "ISO639P3code": "hrv",
+      "Macroarea": "Eurasia",
+      "Latitude": "45.55",
+      "Longitude": "15.98",
+      "contributors": "Lidija Milković",
+      "excel_filename": "old-croatian.xlsx"
+    },
+    {
+      "ID": "olde1238",
+      "Name": "Old English",
+      "Glottocode": "olde1238",
+      "Glottolog_Name": "Old English",
+      "Family": "Indo-European",
+      "ISO639P3code": "ang",
+      "Macroarea": "Eurasia",
+      "Latitude": "51.20",
+      "Longitude": "-1.51",
+      "contributors": "Martina Giarda",
+      "excel_filename": "old-english.xlsx"
+    },
+    {
+      "ID": "oldh1241",
+      "Name": "Old High German",
+      "Glottocode": "oldh1241",
+      "Glottolog_Name": "Old High German (ca. 750-1050)",
+      "Family": "Indo-European",
+      "ISO639P3code": "goh",
+      "Macroarea": "Eurasia",
+      "Latitude": "52.0",
+      "Longitude": "10.00",
+      "contributors": "Giacomo Bucci",
+      "excel_filename": "old-high-german.xlsx"
+    },
+    {
+      "ID": "oldi1246",
+      "Name": "Old Irish",
+      "Glottocode": "oldi1246",
+      "Glottolog_Name": "Old Irish",
+      "Family": "Indo-European",
+      "ISO639P3code": "sga",
+      "Macroarea": "Eurasia",
+      "Latitude": "53.00",
+      "Longitude": "-8.00",
+      "contributors": "Elisa Roma",
+      "excel_filename": "old-irish.xlsx"
+    },
+    {
+      "ID": "oldl1238",
+      "Name": "Old Latin",
+      "Glottocode": "oldl1238",
+      "Glottolog_Name": "Old Latin",
+      "Family": "Indo-European",
+      "ISO639P3code": "qbb",
+      "Macroarea": "Eurasia",
+      "Latitude": "41.90",
+      "Longitude": "12.49",
+      "contributors": "Martina Giuliani",
+      "excel_filename": "old-latin.xlsx"
+    },
+    {
+      "ID": "oldl1240",
+      "Name": "Old Lithuanian",
+      "Glottocode": "oldl1240",
+      "Glottolog_Name": "Old Lithuanian",
+      "Family": "Indo-European",
+      "ISO639P3code": "lit",
+      "Macroarea": "Eurasia",
+      "Latitude": "55.14",
+      "Longitude": "23.96",
+      "contributors": "Jolanta Gelumbeckaite",
+      "excel_filename": "old-lithuanian.xlsx"
+    },
+    {
+      "ID": "oldn1244",
+      "Name": "Old Norse",
+      "Glottocode": "oldn1244",
+      "Glottolog_Name": "Old Norse",
+      "Family": "Indo-European",
+      "ISO639P3code": "non",
+      "Macroarea": "Eurasia",
+      "Latitude": "64.672078",
+      "Longitude": "-17.1311796",
+      "contributors": "Matteo Tarsi",
+      "excel_filename": "old-norse.xlsx"
+    },
+    {
+      "ID": "olds1252",
+      "Name": "Old Swedish",
+      "Glottocode": "olds1252",
+      "Glottolog_Name": "Old Swedish",
+      "Family": "Indo-European",
+      "ISO639P3code": "swe",
+      "Macroarea": "Eurasia",
+      "Latitude": "59.80",
+      "Longitude": "17.39",
+      "contributors": "Matteo Tarsi",
+      "excel_filename": "old-swedish.xlsx"
+    },
+    {
+      "ID": "poli1260",
+      "Name": "Polish",
+      "Glottocode": "poli1260",
+      "Glottolog_Name": "Polish",
+      "Family": "Indo-European",
+      "ISO639P3code": "pol",
+      "Macroarea": "Eurasia",
+      "Latitude": "51.84",
+      "Longitude": "18.63",
+      "contributors": "Jerzy Gaszewski",
+      "excel_filename": "polish.xlsx"
+    },
+    {
+      "ID": "russ1263",
+      "Name": "Russian",
+      "contributors": "Erica Pinelli",
+      "excel_filename": "russian.xlsx"
+    },
+    {
+      "ID": "swah1253",
+      "Name": "Swahili",
+      "Glottocode": "swah1253",
+      "Glottolog_Name": "Swahili",
+      "Family": "Atlantic-Congo",
+      "ISO639P3code": "swh",
+      "Macroarea": "Africa",
+      "Latitude": "-8.26",
+      "Longitude": "37.62",
+      "contributors": "Cecilia Mignanti",
+      "excel_filename": "swahili.xlsx"
+    },
+    {
+      "ID": "nucl1301",
+      "Name": "Turkish",
+      "Glottocode": "nucl1301",
+      "Glottolog_Name": "Turkish",
+      "Family": "Indo-European",
+      "ISO639P3code": "tur",
+      "Macroarea": "Eurasia",
+      "Latitude": "39.87",
+      "Longitude": "32.87",
+      "contributors": "Maria Chantal Seghedoni",
+      "excel_filename": "turkish.xlsx"
+    },
+    {
+      "ID": "vedi1234",
+      "Name": "Vedic Sanskrit",
+      "Glottocode": "vedi1234",
+      "Glottolog_Name": "Vedic Sanskrit",
+      "Family": "Indo-European",
+      "ISO639P3code": "vsn",
+      "Macroarea": "Eurasia",
+      "Latitude": "20",
+      "Longitude": "77",
+      "contributors": "Erica Biagetti and Leonardo Montesi",
+      "excel_filename": "vedic.xlsx"
+    }
+  ]
+}
