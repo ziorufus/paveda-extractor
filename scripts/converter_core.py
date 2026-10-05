@@ -809,6 +809,15 @@ def run_conversion(config):
                 print(row)
 
         example_index = 0
+        if language_to_update:
+            for existing_example in examples_db.values():
+                if existing_example["Language_ID"] == lang_code:
+                    try:
+                        existing_number = int(existing_example["Number"])
+                    except (TypeError, ValueError):
+                        existing_number = 0
+                    example_index = max(example_index, existing_number)
+
         new_examples = []
         new_frame_examples = {}
         for index in df_examples.index:

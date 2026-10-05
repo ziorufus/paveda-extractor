@@ -4,6 +4,7 @@ import json
 import os
 import shutil
 import tempfile
+import traceback
 import zipfile
 from contextlib import asynccontextmanager, redirect_stderr, redirect_stdout
 from pathlib import Path
@@ -208,7 +209,9 @@ def create_app(*, input_folder, excel_folder, db_path, config_path=DEFAULT_CONFI
             raise HTTPException(
                 status_code=500,
                 detail={
+                    "error": type(exc).__name__,
                     "message": str(exc),
+                    "traceback": traceback.format_exc(),
                     "log": log_stream.getvalue(),
                 },
             ) from exc
