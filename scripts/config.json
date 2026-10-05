@@ -21,6 +21,7 @@
   "rename_columns": {
     "a": {
       "Alternation class": "R/A/D/I",
+      "Alternation class R/A/D/I": "R/A/D/I",
       "Coding type": "Type",
       "Coding Type": "Type",
       "M/R/N": "M/R/N/D"
@@ -60,7 +61,10 @@
     ],
     "matteo": [
       "old-swedish.xlsx",
-      "old-norse.xlsx"
+      "old-norse.xlsx",
+      "modern-dutch.xlsx",
+      "modern-west-frisian.xlsx",
+      "old-frisian.xlsx"
     ]
   },
   "languages": [
