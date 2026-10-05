@@ -20,3 +20,9 @@ db.sqlite
 convert-before-*
 convert_bak*
 examples.txt
+backend/.venv
+.env
+.venv
+node_modules
+dist
+*.db
